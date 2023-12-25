@@ -37,3 +37,23 @@
    "ping": null
 }
 ```
+
+Но обычно ответ такой:
+```json
+{
+   "subscriptions": {
+      "accounts": [
+         {
+            "account_id": "2103311XXX",
+            "subscription_status": 1
+         },
+         {
+            "account_id": "2103434593",
+            "subscription_status": 1
+         }
+      ]
+   },
+   "position": null,
+   "ping": null
+}
+```
