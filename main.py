@@ -6,13 +6,20 @@
 import mlb
 import os
 from tinkoff.invest import Client
+from tinkoff.invest.constants import INVEST_GRPC_API
 
-# os.environ['INVEST_TOKEN'] = ''
+os.environ['INVEST_TOKEN'] = 't.QtEo8ahkNFX4RTpbqp0u4z4GDZq27HzUp6AotJASBx7_DVqmqZMHfM2Cy7JmUjS80boI9eVg'  # фейковый токен
+
 # TOKEN = os.environ["INVEST_TOKEN"]
-
 TOKEN = mlb.read_text_from_file(os.path.join('C:\\', 'keys', 'invest.txt'))  # Мой токен реального счета
 
+base_url = 'http://invest-public-api.tinkoff.ru:443'
+
+with Client(TOKEN, target=INVEST_GRPC_API) as client:
+    print(client.users.get_accounts())
+
 def main():
+
     with Client(TOKEN) as client:
         response = client.users.get_accounts()
         accounts = [account.id for account in response.accounts]
