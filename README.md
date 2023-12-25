@@ -57,3 +57,11 @@
    "ping": null
 }
 ```
+А ещё чаще вот такой:
+{
+   "subscriptions": null,
+   "position": null,
+   "ping": {
+      "time": "2023-12-25T14:49:19.658264Z"
+   }
+}
